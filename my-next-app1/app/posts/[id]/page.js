@@ -14,8 +14,12 @@ export async function generateMetadata({ params }) {
 
 const PostPage = async ({ params }) => {
   const { id } = params;
-  const post = await getSinglePost(id);
-  const comments = await getPostComments(id);
+  // const post = await getSinglePost(id);
+  const postPromise = getSinglePost(id);
+  // const comments = await getPostComments(id);
+  const commentsPromise = getPostComments(id);
+
+  const [post, comments] = await Promise.all([postPromise, commentsPromise]);
 
   return (
     <div className="post-container bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 min-h-screen flex flex-col items-center justify-center py-12 px-4">
