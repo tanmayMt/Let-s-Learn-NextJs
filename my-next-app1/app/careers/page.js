@@ -7,4 +7,4 @@ const CareerPage = () => {
   )
 }
 
-export default CareerPage
+export default CareerPage;
