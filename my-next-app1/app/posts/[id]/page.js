@@ -1,4 +1,4 @@
-
+import Comments from '@/app/components/Comments';
 import React from 'react';
 import getSinglePost from '@/lib/getSinglePost';
 import getPostComments from '@/lib/getPostComment';
@@ -19,7 +19,8 @@ const PostPage = async ({ params }) => {
   // const comments = await getPostComments(id);
   const commentsPromise = getPostComments(id);
 
-  const [post, comments] = await Promise.all([postPromise, commentsPromise]);
+  // const [post, comments] = await Promise.all([postPromise, commentsPromise]);
+  const post = await postPromise;
 
   return (
     <div className="post-container bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 min-h-screen flex flex-col items-center justify-center py-12 px-4">
@@ -32,7 +33,7 @@ const PostPage = async ({ params }) => {
         <h1 className="post-id text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 text-center mt-8 mb-2">{post.title}</h1>
         <p className="post-body text-lg text-gray-700 mb-8 text-center leading-relaxed">{post.body}</p>
         {/* Comments Section */}
-        <div className="comments-section bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 rounded-2xl p-6 shadow-inner">
+        {/* <div className="comments-section bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 rounded-2xl p-6 shadow-inner">
           <h3 className="comments-title text-xl font-semibold text-pink-700 mb-4 text-center">💬 Comments</h3>
           <ul className="comments-list space-y-4">
             {comments.map((comment) => (
@@ -42,7 +43,8 @@ const PostPage = async ({ params }) => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
+        <Comments promise={commentsPromise} />
       </div>
     </div>
   );
