@@ -1,6 +1,5 @@
-"use client"
-
-
+import Button from '@/app/components/Button';   //Same As this-> import Button from '../../components/Button';
+// import Button from '../../components/Button';
 import React from 'react'
 
 export default function Mission(){
@@ -14,11 +13,7 @@ export default function Mission(){
     </p>
         
       {/* For this button server component is now to applicatable it become Clien componet */}
-      <div className='mt-5'>
-      <button className='bg-indigo-700 rounded-sm px-4 py1' onClick={()=> console.log("I have Clicked Here")}>
-        Click Here
-      </button>
-    </div>
+      <Button/>
 
    </main> 
   )
