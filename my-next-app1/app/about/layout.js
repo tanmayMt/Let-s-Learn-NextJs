@@ -6,6 +6,7 @@ function aboutLayout({children}) {
           <ul className="flex gap-6">
             <li><Link href="/about/mission">Mission</Link></li>
             <li><Link href="/about/vission">Vission</Link></li>
+            <li><Link href="/about/projects">Projects</Link></li>
           </ul>
         </nav>
       {children}
