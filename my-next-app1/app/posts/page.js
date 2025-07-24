@@ -2,6 +2,11 @@ import getAllPosts from '@/lib/getAllPosts';
 import Link from 'next/link';
 import React from 'react';
 
+export const metadata = {
+    title: 'All Posts',
+    description: 'A list of all posts available on the platform.',
+    };
+
 const Posts = async () => {
   const posts = await getAllPosts();
   console.log(posts); // Debugging line to check fetched posts

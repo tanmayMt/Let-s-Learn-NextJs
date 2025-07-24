@@ -1,6 +1,14 @@
 import { notFound } from 'next/navigation';
 import React from 'react'
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+
+  return {
+    title: `Blog ${id}`,
+    description: `This is the description for Blog ${id}`,
+  };
+}
 
 const BlogPage = async ({ params }) => {
   const { id } = await params;
