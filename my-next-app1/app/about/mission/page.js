@@ -6,7 +6,7 @@ export default function Mission(){
   return (
    <main className='mt-10'>
     <h2><u>This is Mission Page</u></h2>
-    <p>
+    <p className=" text-purple-700 mb-4">
       This is Mission PageThis is Mission PageThis is Mission PageThis is
       Mission PageThis is Mission This is Mission PageThis is Mission Page
       PageThis is Mission PageThis is Mission Page

@@ -1,5 +1,11 @@
 
+export const metadata = {
+  title: "About us",
+  description: "This is a about page",
+};
+
 export default function About() {
+
   return (
     <div className="mt-10 flex justify-center">
       <div className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 p-8 rounded-2xl shadow-xl max-w-2xl w-full">
