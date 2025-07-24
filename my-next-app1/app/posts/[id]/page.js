@@ -6,10 +6,10 @@ const PostPage = async ({ params }) => {
   const post = await getSinglePost(id);
 
   return (
-    <div>
-      <h1>Post ID: {id}</h1>
-      <h2>Title: {post.title}</h2>
-      <p>{post.body}</p>
+    <div className="post-detail-main">
+      <h1 className="post-detail-id">Post ID: {id}</h1>
+      <h2 className="post-detail-title">Title: {post.title}</h2>
+      <p className="post-detail-body">{post.body}</p>
     </div>
   )
 }

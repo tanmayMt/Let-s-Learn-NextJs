@@ -21,23 +21,42 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="p-6">
+    <html lang="en" className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={inter.className}
+        className={`${inter.className} min-h-screen`}
       >
-        <nav>
-          <ul className="flex gap-6">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/careers">Career</Link></li>
-            <li><Link href="/blogs">Blogs</Link></li>
-            <li><Link href="/posts">Posts</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
+        <nav className="mx-auto mt-6 mb-8 max-w-4xl rounded-2xl shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 p-4">
+          <ul className="flex justify-center gap-8">
+            <li>
+              <Link href="/" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">Home</Link>
+            </li>
+            <li>
+              <Link href="/about" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">About</Link>
+            </li>
+            <li>
+              <Link href="/careers" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">Career</Link>
+            </li>
+            <li>
+              <Link href="/blogs" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">Blogs</Link>
+            </li>
+            <li>
+              <Link href="/posts" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">Posts</Link>
+            </li>
+            <li>
+              <Link href="/contact" 
+                    className="text-white font-bold px-4 py-2 rounded-lg transition-colors duration-200 hover:bg-white/20 hover:text-yellow-300">Contact Us</Link>
+            </li>
           </ul>
         </nav>
-        <hr></hr>
-        {children}
+        <div className="mx-auto max-w-3xl bg-white/80 rounded-xl shadow p-8">
+          {children}
+        </div>
       </body>
     </html>
   );

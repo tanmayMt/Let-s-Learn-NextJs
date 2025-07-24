@@ -15,12 +15,12 @@ export default function Blogs(){
   ];
 
   return (
-    <main className="mt-10">
-      <h1>All Blogs</h1>
-      <ul>
+    <main className="blogs-main mt-10">
+      <h1 className="blogs-title">All Blogs</h1>
+      <ul className="blogs-list">
         {blogs.map((blog)=>(
-          <Link key={blog.id} href={`/blogs/${blog.id}`}>
-            <li className="mb-5">{blog.title}</li>
+          <Link key={blog.id} href={`/blogs/${blog.id}`} className="blogs-link">
+            <li className="blogs-list-item mb-5">{blog.title}</li>
           </Link>
         ))}
       </ul>

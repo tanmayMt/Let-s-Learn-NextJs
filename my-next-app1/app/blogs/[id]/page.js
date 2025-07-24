@@ -9,7 +9,7 @@ const BlogPage = async ({ params }) => {
     notFound(); // This will trigger a 404 page if the id is 3
   }
   return (
-    <div>The Blog ID is :{id}</div>
+    <div className="blog-detail-container">The Blog ID is :{id}</div>
   );
 }
 
