@@ -9,7 +9,7 @@ export const metadata = {
 
 const Posts = async () => {
   const posts = await getAllPosts();
-  console.log(posts); // Debugging line to check fetched posts
+  //console.log(posts); // Debugging line to check fetched posts
   return (
     <div className="posts-main mt-6">
         <h1 className="posts-title">All Posts</h1>
