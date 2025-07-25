@@ -1,5 +1,5 @@
 import Comments from '@/app/components/Comments';
-import React from 'react';
+import React, { Suspense } from 'react';
 import getSinglePost from '@/lib/getSinglePost';
 import getPostComments from '@/lib/getPostComment';
 
@@ -44,10 +44,23 @@ const PostPage = async ({ params }) => {
             ))}
           </ul>
         </div> */}
-        <Comments promise={commentsPromise} />
+        <Suspense fallback="<h1>Loading comments...</h1>">
+          <Comments promise={commentsPromise} />
+        </Suspense>
       </div>
     </div>
   );
 }
-
 export default PostPage;
+
+import getAllPosts from '@/lib/getAllPosts';
+// Generate static paths for all posts
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  // Assuming getAllPosts returns an array of post objects with an 'id' property
+  // Each post object should have an 'id' that can be converted to a string
+  // This function generates paths for each post based on their IDs
+  return posts.map((post) => ({
+    id: post.id.toString(),
+  }));
+}

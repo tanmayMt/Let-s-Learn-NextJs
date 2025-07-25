@@ -26,5 +26,4 @@ const Posts = async () => {
     </div>
   )
 }
-
 export default Posts;
